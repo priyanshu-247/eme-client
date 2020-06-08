@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "670075866578",
+    "firebase_url": "https://eme-corp-87dba.firebaseio.com",
+    "project_id": "eme-corp-87dba",
+    "storage_bucket": "eme-corp-87dba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670075866578:android:695ffaa45bb574867d8c0b",
+        "android_client_info": {
+          "package_name": "com.eme.sign_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670075866578-8sntjq4cvq3o7e69nbj186to6js9j63h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMWG11Ir_SS6WecIFrez26fA6IfPlfHSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670075866578-8sntjq4cvq3o7e69nbj186to6js9j63h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

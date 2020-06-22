@@ -1,5 +1,6 @@
 class Amenity {
   String imgPath;
   String amenityName;
-  Amenity({this.imgPath,this.amenityName});
+  String route;
+  Amenity({this.imgPath,this.amenityName,this.route});
 }

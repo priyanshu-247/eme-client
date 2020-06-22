@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sign_up/models/amenity.dart';
 // import 'package:sign_up/models/user.dart';
 import 'package:sign_up/screens/home/amenitiesList.dart';
+import 'package:sign_up/screens/home/drawerItems.dart';
 import 'package:sign_up/screens/home/homebanner.dart';
-import 'package:sign_up/screens/home/profileDrawer.dart';
 import 'package:sign_up/screens/home/titleBar.dart';
 import 'package:sign_up/services/cloudfirestore_db_service.dart';
 import 'package:sign_up/services/firebase_auth_service.dart';
@@ -60,27 +60,14 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        drawer: Drawer(
-            child: ListView(
-          padding: const EdgeInsets.all(2.0),
-          children: <Widget>[
-            ProfileDrawer(),
-            ListTile(
-              leading: Icon(Icons.home, color: Colors.redAccent),
-              title: Text('Destination Wedding'),
-              trailing: Text('New',
-                  style: TextStyle(
-                      color: Colors.green, fontWeight: FontWeight.bold)),
-            ),
-          ],
-        )),
+        drawer: DrawerItems(),
         body: ListView(
           physics: ClampingScrollPhysics(),
           children: <Widget>[
             HomeBanner(
               screenHeight: MediaQuery.of(context).size.height,
             ),
-            TitleBar(title: "Our Collections" ),
+            TitleBar(title: "Our Collections"),
             AmenitiesList(),
           ],
         ),
@@ -89,19 +76,17 @@ class _HomeState extends State<Home> {
   }
 }
 
-
-
 // ? String greeting() {
 // ?   var hour = DateTime.now().hour;
 // ?   if (hour < 12) {
 // ?     return 'Morning';
 // ?   }
-// ?   if (hour < 17) {   
+// ?   if (hour < 17) {
 // ?     return 'Afternoon';
 // ?   }
 // ?   return 'Evening';
 // ? }
- 
+
 // !Padding(
 // !  padding: const EdgeInsets.only(left: 16, bottom: 30),
 // !  child: Column(

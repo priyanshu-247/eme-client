@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sign_up/models/amenity.dart';
+import 'package:sign_up/models/caters.dart';
 
 class DatabaseService {
   final String uid;
@@ -8,6 +9,9 @@ class DatabaseService {
   // collection refrence
   final CollectionReference emeAmenities =
       Firestore.instance.collection('Our Amenities');
+
+  final CollectionReference emeCaters =
+      Firestore.instance.collection('Our Caters');
   final CollectionReference emeUser =
       Firestore.instance.collection('Users Profile');
   Future updateUserData(String displayName, String photoUrl, String phoneNumber,
@@ -25,12 +29,23 @@ class DatabaseService {
       //print(doc.data);
       return Amenity(
           imgPath: doc.data['ImageUrl'] ?? '0',
-          amenityName: doc.data['Name'] ?? '0');
+          amenityName: doc.data['Name'] ?? '0',
+          route: doc.data['Route'] ?? '0');
     }).toList();
   }
 
   // get Amenities stream from firebase
   Stream<List<Amenity>> get emeAmenitiesList {
     return emeAmenities.snapshots().map(_amenityAmenityListFromSnapshot);
+  }
+
+  List<Caters> _catersListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Caters(
+        catersName: doc.data['Name'] ?? '0',
+        catersAbout: doc.data['About'] ?? '0',
+        catersRating: doc.data['Rating'] ?? '0',
+      );
+    }).toList();
   }
 }

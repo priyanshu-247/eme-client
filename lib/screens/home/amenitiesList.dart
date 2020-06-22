@@ -21,9 +21,11 @@ class _AmenitiesListState extends State<AmenitiesList> {
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.only(left: 16, right: 6),
-              itemCount: amenites.length ,
+              itemCount: amenites.length,
               itemBuilder: (context, index) {
-                return AmenityCard(amenity: amenites[index],);
+                return AmenityCard(
+                  amenity: amenites[index],
+                );
               }),
         ));
   }

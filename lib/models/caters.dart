@@ -5,6 +5,7 @@ class Caters {
   int minPricePerPlate;
   int maxPricePerPlate;
   int caterId;
+  String imageUrl;
 
   Caters(
       {this.catersAbout,
@@ -12,5 +13,6 @@ class Caters {
       this.catersRating,
       this.maxPricePerPlate,
       this.minPricePerPlate,
-      this.caterId});
+      this.caterId,
+      this.imageUrl});
 }

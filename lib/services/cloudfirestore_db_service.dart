@@ -43,10 +43,11 @@ class DatabaseService {
       return Caters(
         catersName: doc.data['Name'] ?? '0',
         catersAbout: doc.data['About'] ?? '0',
-        catersRating: doc.data['Rating'] ?? 0,
+        catersRating: doc.data['Rating'] ?? 0.0,
         caterId: doc.data['Id'] ?? 0,
         maxPricePerPlate: doc.data['Maxprice'] ?? 0,
         minPricePerPlate: doc.data['Minprice'] ?? 0,
+        imageUrl: doc.data['Url'] ?? "0",
       );
     }).toList();
   }

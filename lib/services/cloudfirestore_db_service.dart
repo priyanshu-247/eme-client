@@ -10,8 +10,7 @@ class DatabaseService {
   final CollectionReference emeAmenities =
       Firestore.instance.collection('Our Amenities');
 
-  final CollectionReference emeCaters =
-      Firestore.instance.collection('Our Caters');
+  final CollectionReference emeCaters = Firestore.instance.collection('Caters');
   final CollectionReference emeUser =
       Firestore.instance.collection('Users Profile');
   Future updateUserData(String displayName, String photoUrl, String phoneNumber,
@@ -44,8 +43,15 @@ class DatabaseService {
       return Caters(
         catersName: doc.data['Name'] ?? '0',
         catersAbout: doc.data['About'] ?? '0',
-        catersRating: doc.data['Rating'] ?? '0',
+        catersRating: doc.data['Rating'] ?? 0,
+        caterId: doc.data['Id'] ?? 0,
+        maxPricePerPlate: doc.data['Maxprice'] ?? 0,
+        minPricePerPlate: doc.data['Minprice'] ?? 0,
       );
     }).toList();
+  }
+
+  Stream<List<Caters>> get caterList {
+    return emeCaters.snapshots().map(_catersListFromSnapshot);
   }
 }

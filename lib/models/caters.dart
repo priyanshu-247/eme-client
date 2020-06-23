@@ -2,9 +2,9 @@ class Caters {
   String catersName;
   int catersRating;
   String catersAbout;
-  double minPricePerPlate;
-  double maxPricePerPlate;
-  int storageBucketId;
+  int minPricePerPlate;
+  int maxPricePerPlate;
+  int caterId;
 
   Caters(
       {this.catersAbout,
@@ -12,5 +12,5 @@ class Caters {
       this.catersRating,
       this.maxPricePerPlate,
       this.minPricePerPlate,
-      this.storageBucketId});
+      this.caterId});
 }

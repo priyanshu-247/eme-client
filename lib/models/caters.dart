@@ -1,4 +1,6 @@
-class Caters {
+import 'package:sailor/sailor.dart';
+
+class Caters extends BaseArguments {
   String catersName;
   int catersRating;
   String catersAbout;

@@ -1,6 +1,9 @@
-# sign_up
+# EME Corp Client App
 
-A new Flutter project.
+A project to provide online infrastructure for marriage events in india.
+
+if you want to contibute this project, please make an pull request :) 
+We are ready to have new idea on board.
 
 ## Getting Started
 

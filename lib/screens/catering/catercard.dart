@@ -14,8 +14,12 @@ class CaterCard extends StatelessWidget {
         caters.maxPricePerPlate.toString();
     return InkWell(
       onTap: () {
-        Routes.sailor
-            .navigate("/caterdetail", args: Caters(caterId: caters.caterId));
+        Routes.sailor.navigate("/caterdetail",
+            args: Caters(
+                catersName: caters.catersName,
+                caterId: caters.caterId,
+                catersAbout: caters.catersAbout,
+                imageUrl: caters.imageUrl));
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 5.0),
@@ -28,7 +32,7 @@ class CaterCard extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(caters.imageUrl),
+                      image: NetworkImage(caters.imageUrl[0]),
                       fit: BoxFit.cover,
                     ),
                     border: Border.all(width: 4.0, color: Colors.red),

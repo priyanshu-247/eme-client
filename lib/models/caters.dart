@@ -7,7 +7,7 @@ class Caters extends BaseArguments {
   int minPricePerPlate;
   int maxPricePerPlate;
   int caterId;
-  String imageUrl;
+  List<String> imageUrl;
 
   Caters(
       {this.catersAbout,

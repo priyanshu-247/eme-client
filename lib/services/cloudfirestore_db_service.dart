@@ -11,6 +11,7 @@ class DatabaseService {
       Firestore.instance.collection('Our Amenities');
 
   final CollectionReference emeCaters = Firestore.instance.collection('Caters');
+
   final CollectionReference emeUser =
       Firestore.instance.collection('Users Profile');
   Future updateUserData(String displayName, String photoUrl, String phoneNumber,
@@ -47,7 +48,7 @@ class DatabaseService {
         caterId: doc.data['Id'] ?? 0,
         maxPricePerPlate: doc.data['Maxprice'] ?? 0,
         minPricePerPlate: doc.data['Minprice'] ?? 0,
-        imageUrl: doc.data['Url'] ?? "0",
+        imageUrl: List<String>.from(doc.data['Url']) ?? [],
       );
     }).toList();
   }

@@ -15,6 +15,10 @@ class CaterDetail extends StatelessWidget {
     // String namedisplay = name().toString();
     // final double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBody: true,
+      bottomNavigationBar: Container(
+        child: Text('Enquiry'),
+      ),
       appBar: AppBar(
         title: Column(
           children: <Widget>[
@@ -64,10 +68,18 @@ class CaterDetail extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  cater.catersName.toUpperCase(),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    cater.catersName.toUpperCase(),
+                    style: TextStyle(
+                        letterSpacing: 2,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black87),
+                  ),
                 ),
               )
             ],

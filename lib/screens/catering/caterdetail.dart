@@ -17,7 +17,26 @@ class CaterDetail extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: Container(
-        child: Text('Enquiry'),
+        height: 60.0,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border:
+                Border(top: BorderSide(color: Colors.grey[300], width: 1.0))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            BottomNav(
+              title: "Enquiry",
+              backColor: Colors.white54,
+              textColor: Colors.black54,
+            ),
+            BottomNav(
+              title: "Book Now",
+              backColor: Colors.redAccent,
+              textColor: Colors.white54,
+            ),
+          ],
+        ),
       ),
       appBar: AppBar(
         title: Column(
@@ -86,6 +105,53 @@ class CaterDetail extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class BottomNav extends StatefulWidget {
+  const BottomNav({Key key, this.title, this.backColor, this.textColor})
+      : super(key: key);
+  final String title;
+  final Color backColor;
+  final Color textColor;
+
+  @override
+  _BottomNavState createState() => _BottomNavState();
+}
+
+class _BottomNavState extends State<BottomNav> {
+  double width = 0.45;
+  bool _istapped = false;
+  void changeWidth() {
+    setState(() {
+      if (_istapped) {
+        width += 0.05;
+        _istapped = false;
+      } else {
+        width -= 0.05;
+        _istapped = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () => {changeWidth()},
+      child: Container(
+          width: MediaQuery.of(context).size.width * width,
+          height: 50,
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+              color: widget.backColor,
+              border: Border.all(color: Colors.black54, width: 1)),
+          child: Center(
+              child: Text(
+            widget.title,
+            style:
+                TextStyle(color: widget.textColor, fontWeight: FontWeight.w700),
+          ))),
     );
   }
 }

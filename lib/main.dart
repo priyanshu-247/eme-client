@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:sign_up/eme_Splash.dart';
+import 'package:sign_up/eme_Splash.dart';
 import 'package:sign_up/routes/routes.dart';
 
 import 'package:provider/provider.dart';
-import 'package:sign_up/screens/conn.dart';
+// import 'package:sign_up/screens/conn.dart';
 import 'package:sign_up/services/firebase_auth_service.dart';
 import 'package:sign_up/models/user.dart';
 
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: Conn(),
+        debugShowCheckedModeBanner: false,
+        home: EMESplash(),
         navigatorKey: Routes.sailor.navigatorKey, // important
         onGenerateRoute: Routes.sailor.generator(),
       ),

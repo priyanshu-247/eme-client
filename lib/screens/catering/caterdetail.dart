@@ -33,7 +33,7 @@ class CaterDetail extends StatelessWidget {
             BottomNav(
               title: "Book Now",
               backColor: Colors.redAccent,
-              textColor: Colors.white54,
+              textColor: Colors.white,
             ),
           ],
         ),
